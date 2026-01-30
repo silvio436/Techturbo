@@ -23,14 +23,13 @@
 
         .main-container { padding: 20px; display: flex; flex-direction: column; align-items: center; }
 
-        /* HEADER E CARDS */
         .cards-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             max-width: 1200px;
             justify-content: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .card {
@@ -42,10 +41,8 @@
             min-width: 340px;
             max-width: 550px;
             text-align: center;
-            transition: 0.3s;
         }
 
-        .card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.05); }
         .tech-card { border-top: 6px solid var(--tech-color); }
         .atmos-card { border-top: 6px solid var(--atmos-color); }
 
@@ -59,7 +56,6 @@
             font-size: 11px;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         .tech-badge { background: var(--tech-color); color: #000; }
         .atmos-badge { background: var(--atmos-color); color: #fff; }
@@ -96,11 +92,12 @@
             margin-top: 25px;
             text-transform: uppercase;
             transition: 0.3s;
+            text-align: center;
         }
-        .btn-tech { background: linear-gradient(45deg, #00d2ff, #0072ff); box-shadow: 0 5px 15px rgba(0,210,255,0.3); }
-        .btn-atmos { background: linear-gradient(45deg, #ff4b2b, #ff0000); box-shadow: 0 5px 15px rgba(255,75,43,0.3); }
+        .btn-tech { background: linear-gradient(45deg, #00d2ff, #0072ff); }
+        .btn-atmos { background: linear-gradient(45deg, #ff4b2b, #ff0000); }
+        .btn-vip { background: linear-gradient(45deg, #ffd700, #b8860b); color: #000; max-width: 300px; margin: 20px auto; }
 
-        /* SEÇÃO PILARES ATMOS (4 COLUNAS) */
         .atmos-pillars {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -117,43 +114,28 @@
         .pillar h4 { margin: 10px 0; font-size: 13px; color: var(--atmos-color); }
         .pillar p { font-size: 11px; margin: 0; opacity: 0.8; }
 
-        /* SEÇÃO VANTAGENS (3 COLUNAS) */
-        .advantages-section {
-            background: #fff;
-            color: #000;
+        /* SEÇÃO MENTORIA VIP */
+        .mentoria-section {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://static.wixstatic.com/media/2313af_e9ebf1ec1f1744388b8acb060d27fdaf~mv2.jpg');
+            background-size: cover;
             width: 100%;
             padding: 60px 20px;
             text-align: center;
+            border-top: 2px solid #ffd700;
+            border-bottom: 2px solid #ffd700;
+            box-sizing: border-box;
         }
-        .advantages-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            max-width: 1100px;
-            margin: 40px auto 0;
-        }
+
+        .advantages-section { background: #fff; color: #000; width: 100%; padding: 60px 20px; text-align: center; box-sizing: border-box; }
+        .advantages-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1100px; margin: 40px auto 0; }
         .adv-item { flex: 1; min-width: 280px; max-width: 350px; }
         .adv-item img { width: 100px; margin-bottom: 20px; }
-        .adv-item h3 { font-size: 18px; margin-bottom: 10px; }
-        .adv-item p { font-size: 14px; color: #555; line-height: 1.5; }
 
-        /* CONTEÚDO FINAL */
-        .extra-section {
-            padding: 60px 20px;
-            max-width: 900px;
-            text-align: center;
-        }
-        .extra-section h2 { color: var(--tech-color); font-size: 28px; }
-        .final-banner { width: 100%; border-radius: 20px; margin: 40px 0; }
-        
-        .cat-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
+        .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; width: 100%; max-width: 1200px; }
         .cat-img { width: 100%; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+
+        .footer-text { margin-top: 40px; text-align: center; padding: 0 20px; }
+        .footer-text h2 { color: #ff4b2b; font-size: 24px; text-transform: uppercase; }
 
         @media (max-width: 768px) { .cards-container { flex-direction: column; } }
     </style>
@@ -163,23 +145,18 @@
     <div class="main-container">
         <div class="cards-container">
             <div class="card tech-card">
-                <img src="https://static.wixstatic.com/media/2313af_8742d2f9d61c40348e17cdee2ff04f12~mv2.png/v1/fill/w_148,h_148,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/02%20-%20LOGO%20PNG%20SEM%20FUNDO.png" class="logo-img">
+                <img src="https://static.wixstatic.com/media/2313af_8742d2f9d61c40348e17cdee2ff04f12~mv2.png" class="logo-img">
                 <br>
                 <span class="badge tech-badge">Tecnologia de ponta para seu entretenimento</span>
                 
                 <div class="revenda-box">
                     <strong>🚀 Seja um Revendedor Tech Turbo</strong><br>
-                    Com o painel exclusivo, suporte 24h e preços imbatíveis, a revenda de canais nunca foi tão lucrativa.
+                    Com o painel exclusivo, suporte 24h e preços imbatíveis, a revenda nunca foi tão lucrativa.
                 </div>
 
                 <div class="info-box">
                     <strong>✅ APPS PARCEIROS GRÁTIS:</strong>
                     <p>X Cloud TV, Play sim, Assist + Plus, vizzion, Blessed, S.A Power.</p>
-                </div>
-
-                <div class="info-box">
-                    <strong>📱 APARELHOS COMPATÍVEIS:</strong>
-                    <p>Fire TV, Stick, Tv Box, Samsung, LG, Philips, ROKU, Android, iPhone, PC.</p>
                 </div>
 
                 <a href="https://wa.me/5547999885669" class="btn btn-tech">Suporte Tech Turbo</a>
@@ -197,11 +174,10 @@
                         <tr><td>101 a 500 ativos</td><td align="right">R$ 3,25</td></tr>
                         <tr><td>Acima de 1001</td><td align="right">R$ 2,50</td></tr>
                     </table>
-                    <p style="margin-top:10px; font-size:12px;">📅 Acertos todo dia 08</p>
                 </div>
 
                 <div class="atmos-pillars">
-                    <div class="pillar"><h4>PROTEÇÃO</h4><p>Novas tecnologias de proteção para o melhor produto.</p></div>
+                    <div class="pillar"><h4>PROTEÇÃO</h4><p>Novas tecnologias para o melhor produto.</p></div>
                     <div class="pillar"><h4>PAGAMENTO</h4><p>Pix, cartão de crédito e boleto bancário.</p></div>
                     <div class="pillar"><h4>SUPORTE</h4><p>Suporte dedicado disponível 24 horas por dia.</p></div>
                     <div class="pillar"><h4>SERVIDORES</h4><p>Líderes de mercado, livre de travamentos.</p></div>
@@ -210,48 +186,44 @@
                 <a href="https://wa.me/5547999885669" class="btn btn-atmos">Suporte Atmos</a>
             </div>
         </div>
+    </div>
 
-        <div class="extra-section">
-            <h2>SAIBA TUDO QUE O UNIVERSO IPTV E P2P PODE OFERECER</h2>
-            <p><strong>Personalize sua experiência.</strong></p>
-            <p>Você tem acesso a todo o conteúdo disponível nos mais diversos pacotes de TVs por assinatura, incluindo os filmes que estreiam no cinema e nos serviços de streaming. Tudo em um só lugar.</p>
-            <p><em>As tardes de domingo com a família nunca mais serão as mesmas!</em></p>
-            
-            <div style="margin-top: 50px;">
-                <h3>Acesse de onde você estiver</h3>
-                <p>Assista seus filmes favoritos em qualquer aparelho com acesso a internet (Smart TV, iPhone, Smartphone, TV BOX, Notebook e Computador).</p>
-            </div>
-        </div>
+    <div class="mentoria-section">
+        <h2 style="color: #ffd700;">TEMOS GRUPOS DE SUPORTE E MENTORIA VIP</h2>
+        <p style="font-size: 20px; font-weight: bold;">REVENDA E LUCRE ALTO</p>
+        <a href="https://wa.me/5547999885669?text=Quero%20saber%20mais%20sobre%20a%20Mentoria%20VIP" class="btn btn-vip">QUERO MINHA MENTORIA</a>
     </div>
 
     <div class="advantages-section">
-        <h2>CONHEÇA NOSSAS VANTAGENS</h2>
         <div class="advantages-grid">
             <div class="adv-item">
-                <img src="https://static.wixstatic.com/media/2313af_fc8f5043ba8f43de8728c906b0843a03~mv2.png/v1/fill/w_372,h_366,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/EmbeddedImage.png">
+                <img src="https://static.wixstatic.com/media/2313af_fc8f5043ba8f43de8728c906b0843a03~mv2.png">
                 <h3>Alta Performance</h3>
-                <p>Nossa equipe busca se especializar a cada dia para garantir o melhor serviço de TV do mercado.</p>
+                <p>Nossa equipe garante o melhor serviço do mercado.</p>
             </div>
             <div class="adv-item">
-                <img src="https://static.wixstatic.com/media/2313af_7f1310133d604dafbc788c8a32cd9601~mv2.png/v1/fill/w_372,h_366,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/EmbeddedImage%20(1).png">
+                <img src="https://static.wixstatic.com/media/2313af_7f1310133d604dafbc788c8a32cd9601~mv2.png">
                 <h3>Suporte Online</h3>
-                <p>Nosso suporte online é eficiente, rápido e de qualidade. Respondemos em menos de 1 hora.</p>
+                <p>Respondemos em menos de 1 hora.</p>
             </div>
             <div class="adv-item">
-                <img src="https://static.wixstatic.com/media/2313af_fcaf37456e434326a0f4292e31ada93b~mv2.png/v1/fill/w_372,h_366,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/kisspng-computer-icons-security-icon-design-material-desig-5b012ad34019d9_7834704215268031.png">
+                <img src="https://static.wixstatic.com/media/2313af_fcaf37456e434326a0f4292e31ada93b~mv2.png">
                 <h3>Maior Segurança</h3>
-                <p>Sua segurança é garantida pelo nosso sistema. E você pode nos ajudar a melhorar com suas sugestões.</p>
+                <p>Sua segurança é garantida pelo nosso sistema.</p>
             </div>
         </div>
     </div>
 
     <div class="main-container">
-        <img src="https://static.wixstatic.com/media/2313af_e9ebf1ec1f1744388b8acb060d27fdaf~mv2.jpg/v1/fill/w_656,h_322,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Captura%20de%20tela%202022-02-23%20222929_edited.jpg" class="final-banner">
+        <div class="footer-text">
+            <h2>NOSSA LISTA JÁ ULTRAPASSA MAIS DE 135.000k EM CONTEÚDOS PRÓPRIOS.</h2>
+            <p style="font-size: 22px; font-weight: bold; color: var(--tech-color);">A MELHOR LISTA SEM TRAVAMENTOS!</p>
+        </div>
         
         <div class="cat-grid">
-            <img src="https://static.wixstatic.com/media/2313af_3bd052ccff254bbe8bf94e7566f288df~mv2.png/v1/fill/w_666,h_388,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Super-Box-TV-Filmes-1024x597-1-1-1.png" class="cat-img">
-            <img src="https://static.wixstatic.com/media/2313af_cd28e244e54448319b4869dae15fbe73~mv2.webp/v1/fill/w_666,h_388,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Super-Box-TV-Series-1024x597-1-1-1.webp" class="cat-img">
-            <img src="https://static.wixstatic.com/media/2313af_1b386625f5bd4c5196631f1398815408~mv2.png/v1/fill/w_666,h_388,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Super-Box-TV-Futebol-1024x597-1-1.png" class="cat-img">
+            <img src="https://static.wixstatic.com/media/2313af_3bd052ccff254bbe8bf94e7566f288df~mv2.png" class="cat-img">
+            <img src="https://static.wixstatic.com/media/2313af_cd28e244e54448319b4869dae15fbe73~mv2.webp" class="cat-img">
+            <img src="https://static.wixstatic.com/media/2313af_1b386625f5bd4c5196631f1398815408~mv2.png" class="cat-img">
         </div>
     </div>
 
