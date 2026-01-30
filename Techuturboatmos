@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Turbo & Atmos - Servidores Premium</title>
+    <style>
+        :root {
+            --tech-color: #00d2ff;
+            --atmos-color: #ff4b2b;
+            --bg-dark: #0f0c29;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            justify-content: center;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .header-card {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .tech-badge { background: var(--tech-color); color: #000; }
+        .atmos-badge { background: var(--atmos-color); color: #fff; }
+
+        h2 { margin: 10px 0; font-size: 28px; }
+        
+        .info-section {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 8px; font-size: 0.95rem; }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .price-table td {
+            padding: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            transition: opacity 0.3s;
+        }
+
+        .btn-tech { background: linear-gradient(45deg, #00d2ff, #3a7bd5); }
+        .btn-atmos { background: linear-gradient(45deg, #ff4b2b, #ff416c); }
+        .btn:hover { opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .card { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Nossas Soluções de IPTV</h1>
+        <p>Escolha o servidor que melhor atende suas necessidades</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="header-card">
+                <span class="badge tech-badge">PREMIUM</span>
+                <h2>TECH TURBO PLAY</h2>
+                <p>Tecnologia de ponta para seu entretenimento</p>
+            </div>
+
+            <div class="info-section">
+                <strong>✅ APPS PARCEIROS GRÁTIS:</strong>
+                <ul>
+                    <li>📺 X Cloud TV</li>
+                    <li>🎬 Play sim</li>
+                    <li>🎥 Assist + Plus</li>
+                    <li>🖥️ vizzion</li>
+                    <li>💻 Blessed</li>
+                    <li>🤖 S.A Power</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <strong>📱 APARELHOS COMPATÍVEIS:</strong>
+                <p>Fire TV, Stick, Tv Box, Samsung, LG, Philips, ROKU, Android, iPhone, PC.</p>
+                <small>Suporte a DNS, M3u, URL e Hls.</small>
+            </div>
+
+            <a href="https://wa.me/5547999885669?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20servidor%20Tech%20Turbo." class="btn btn-tech">ASSINAR TECH TURBO</a>
+        </div>
+
+        <div class="card">
+            <div class="header-card">
+                <span class="badge atmos-badge">REVENDA PÓS-PAGO</span>
+                <h2>ATMOS</h2>
+                <p>Estabilidade e Qualidade Garantida</p>
+            </div>
+
+            <div class="info-section">
+                <p>⚠️ <strong>PLANO PÓS-PAGO</strong><br>Taxa de Adesão: R$ 30,00</p>
+                <p>📅 Acertos: Todo dia 08</p>
+                
+                <table class="price-table">
+                    <tr><td>11 a 100 ativos</td><td><strong>R$ 3,50</strong></td></tr>
+                    <tr><td>101 a 500 ativos</td><td><strong>R$ 3,25</strong></td></tr>
+                    <tr><td>501 a 1000 ativos</td><td><strong>R$ 2,75</strong></td></tr>
+                    <tr><td>Acima de 1001</td><td><strong>R$ 2,50</strong></td></tr>
+                </table>
+                <small>* Mínimo de 11 ativos (R$ 38,50)</small>
+            </div>
+
+            <div class="info-section">
+                <strong>✅ APPS PARCEIROS GRÁTIS:</strong>
+                <ul>
+                    <li>📺 X Cloud TV | 🎬 MAX Player</li>
+                    <li>🎥 Assist + Plus | 🖥️ Lazer Play</li>
+                    <li>🤖 Vuser | 🤖 Ibo control</li>
+                    <li>🤖 Xtream Ultra | 🤖 SMV4T1</li>
+                </ul>
+            </div>
+
+            <a href="https://wa.me/5547999885669?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20revenda%20Atmos%20p%C3%B3s-pago." class="btn btn-atmos">SEJA UM REVENDEDOR</a>
+        </div>
+    </div>
+
+</body>
+</html>
