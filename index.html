@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Turbo & Atmos - Servidores Premium</title>
+    <title>Tech Turbo & Atmos - Premium IPTV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --tech-color: #00d2ff;
+            --tech-grad: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
             --atmos-color: #ff4b2b;
+            --atmos-grad: linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%);
             --bg-dark: #0f0c29;
-            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-bg: rgba(255, 255, 255, 0.08);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-            color: white;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, #1a1a4d, #0f0c29);
+            color: #ffffff;
             margin: 0;
             padding: 20px;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -25,163 +29,223 @@
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            max-width: 800px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            max-width: 1200px;
+            gap: 25px;
+            max-width: 1100px;
+            width: 100%;
             justify-content: center;
         }
 
         .card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 24px;
+            padding: 35px;
             flex: 1;
             min-width: 320px;
-            max-width: 500px;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 255, 255, 0.3);
+            max-width: 480px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
         }
 
         .header-card {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
+
+        .logo-placeholder {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .tech-text { color: var(--tech-color); }
+        .atmos-text { color: var(--atmos-color); }
 
         .badge {
             display: inline-block;
-            padding: 5px 15px;
+            padding: 6px 16px;
             border-radius: 50px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
         .tech-badge { background: var(--tech-color); color: #000; }
         .atmos-badge { background: var(--atmos-color); color: #fff; }
 
-        h2 { margin: 10px 0; font-size: 28px; }
-        
         .info-section {
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
+            background: rgba(255,255,255,0.04);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border-left: 4px solid transparent;
         }
 
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 8px; font-size: 0.95rem; }
+        .tech-border { border-left-color: var(--tech-color); }
+        .atmos-border { border-left-color: var(--atmos-color); }
+
+        .info-section h3 {
+            margin-top: 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 1px;
+        }
+
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { margin-bottom: 10px; display: flex; align-items: center; font-size: 0.95rem; }
+        li::before { content: "✦"; margin-right: 10px; opacity: 0.5; }
 
         .price-table {
             width: 100%;
-            border-collapse: collapse;
             margin: 15px 0;
+            font-size: 0.9rem;
         }
         .price-table td {
-            padding: 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
+        .price-table tr:last-child td { border: none; }
 
         .btn {
             display: block;
             text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 10px;
+            padding: 18px;
+            border-radius: 14px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             color: white;
-            transition: opacity 0.3s;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .btn-tech { background: linear-gradient(45deg, #00d2ff, #3a7bd5); }
-        .btn-atmos { background: linear-gradient(45deg, #ff4b2b, #ff416c); }
-        .btn:hover { opacity: 0.8; }
+        .btn-tech { background: var(--tech-grad); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3); }
+        .btn-atmos { background: var(--atmos-grad); box-shadow: 0 10px 20px rgba(255, 75, 43, 0.3); }
+        
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
+
+        .benefits {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
 
         @media (max-width: 768px) {
-            .container { flex-direction: column; }
-            .card { width: 100%; }
+            .container { flex-direction: column; align-items: center; }
+            .card { width: 100%; max-width: 400px; }
+            header h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Nossas Soluções de IPTV</h1>
-        <p>Escolha o servidor que melhor atende suas necessidades</p>
+        <h1>Soluções Premium IPTV & Revenda</h1>
+        <p>A melhor estabilidade do mercado com suporte especializado 24h.</p>
     </header>
 
     <div class="container">
         <div class="card">
             <div class="header-card">
-                <span class="badge tech-badge">PREMIUM</span>
-                <h2>TECH TURBO PLAY</h2>
-                <p>Tecnologia de ponta para seu entretenimento</p>
+                <span class="badge tech-badge">Foco em Usuário Final</span>
+                <span class="logo-placeholder tech-text">TECH TURBO PLAY</span>
+                <p>O servidor nº 1 em estabilidade no Brasil</p>
             </div>
 
-            <div class="info-section">
-                <strong>✅ APPS PARCEIROS GRÁTIS:</strong>
+            <div class="info-section tech-border">
+                <h3>💎 Diferenciais Tech Turbo</h3>
                 <ul>
-                    <li>📺 X Cloud TV</li>
-                    <li>🎬 Play sim</li>
-                    <li>🎥 Assist + Plus</li>
-                    <li>🖥️ vizzion</li>
-                    <li>💻 Blessed</li>
-                    <li>🤖 S.A Power</li>
+                    <li>+ de 80.000 Conteúdos (Canais, Filmes e Séries)</li>
+                    <li>Qualidade SD, HD, FULL HD e 4K</li>
+                    <li>Guia de Programação (EPG) atualizado</li>
+                    <li>Servidor sem travamentos (Anti-Freeze)</li>
                 </ul>
             </div>
 
             <div class="info-section">
-                <strong>📱 APARELHOS COMPATÍVEIS:</strong>
-                <p>Fire TV, Stick, Tv Box, Samsung, LG, Philips, ROKU, Android, iPhone, PC.</p>
-                <small>Suporte a DNS, M3u, URL e Hls.</small>
+                <h3>✅ Apps Parceiros Grátis</h3>
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    X Cloud TV, Play Sim, Assist + Plus, Vizzion, Blessed, S.A Power.
+                </p>
             </div>
 
-            <a href="https://wa.me/5547999885669?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20servidor%20Tech%20Turbo." class="btn btn-tech">ASSINAR TECH TURBO</a>
+            <div class="info-section">
+                <h3>📱 Compatibilidade</h3>
+                <p style="font-size: 0.85rem;">Fire Stick, Smart TVs, TV Box, Roku, Android, iPhone e PC.</p>
+            </div>
+
+            <a href="https://wa.me/5547999885669?text=Quero%20fazer%20um%20teste%20gr%C3%A1tis%20no%20Tech%20Turbo" class="btn btn-tech">Solicitar Teste Grátis</a>
         </div>
 
         <div class="card">
             <div class="header-card">
-                <span class="badge atmos-badge">REVENDA PÓS-PAGO</span>
-                <h2>ATMOS</h2>
-                <p>Estabilidade e Qualidade Garantida</p>
+                <span class="badge atmos-badge">Exclusivo para Revendedores</span>
+                <span class="logo-placeholder atmos-text">ATMOS</span>
+                <p>O melhor painel Pós-Pago para sua equipe</p>
             </div>
 
-            <div class="info-section">
-                <p>⚠️ <strong>PLANO PÓS-PAGO</strong><br>Taxa de Adesão: R$ 30,00</p>
-                <p>📅 Acertos: Todo dia 08</p>
+            <div class="info-section atmos-border">
+                <p>⚠️ <strong>SISTEMA PÓS-PAGO</strong><br>
+                Adesão: R$ 30,00 | Créditos ILIMITADOS</p>
                 
                 <table class="price-table">
-                    <tr><td>11 a 100 ativos</td><td><strong>R$ 3,50</strong></td></tr>
-                    <tr><td>101 a 500 ativos</td><td><strong>R$ 3,25</strong></td></tr>
-                    <tr><td>501 a 1000 ativos</td><td><strong>R$ 2,75</strong></td></tr>
-                    <tr><td>Acima de 1001</td><td><strong>R$ 2,50</strong></td></tr>
+                    <tr><td>11 a 100 clientes</td><td align="right"><strong>R$ 3,50/ativo</strong></td></tr>
+                    <tr><td>101 a 500 clientes</td><td align="right"><strong>R$ 3,25/ativo</strong></td></tr>
+                    <tr><td>Acima de 1001</td><td align="right"><strong>R$ 2,50/ativo</strong></td></tr>
                 </table>
-                <small>* Mínimo de 11 ativos (R$ 38,50)</small>
+                <small style="color:rgba(255,255,255,0.4)">* Acerto todo dia 08 de cada mês.</small>
             </div>
 
             <div class="info-section">
-                <strong>✅ APPS PARCEIROS GRÁTIS:</strong>
+                <h3>🚀 Apps Próprios Atmos</h3>
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    MAX Player, Assist + Plus, Lazer Play, Vuser, Ibo Control, Xtream Ultra, SMV4T1.
+                </p>
+            </div>
+
+            <div class="info-section">
+                <h3>✅ Vantagens da Revenda</h3>
                 <ul>
-                    <li>📺 X Cloud TV | 🎬 MAX Player</li>
-                    <li>🎥 Assist + Plus | 🖥️ Lazer Play</li>
-                    <li>🤖 Vuser | 🤖 Ibo control</li>
-                    <li>🤖 Xtream Ultra | 🤖 SMV4T1</li>
+                    <li>Painel de gerenciamento completo</li>
+                    <li>Suporte direto via WhatsApp</li>
+                    <li>Liberdade para criar seus preços</li>
                 </ul>
             </div>
 
-            <a href="https://wa.me/5547999885669?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20revenda%20Atmos%20p%C3%B3s-pago." class="btn btn-atmos">SEJA UM REVENDEDOR</a>
+            <a href="https://wa.me/5547999885669?text=Quero%20ser%20um%20revendedor%20Atmos" class="btn btn-atmos">Quero ser Revendedor</a>
         </div>
+    </div>
+
+    <div class="benefits">
+        <span>⚡ Ativação Imediata</span>
+        <span>🛡️ 100% Seguro</span>
+        <span>💬 Suporte 24/7</span>
     </div>
 
 </body>
