@@ -9,8 +9,8 @@
         :root {
             --tech-color: #00d2ff;
             --atmos-color: #ff4b2b;
-            --bg-dark: #0a0a0a;
-            --menu-bg: rgba(10, 10, 10, 0.95);
+            --bg-dark: #000000;
+            --menu-bg: #000000;
         }
 
         body {
@@ -18,39 +18,45 @@
             background: var(--bg-dark);
             color: white;
             margin: 0;
-            padding-top: 70px; /* Espaço para o menu fixo */
+            padding-top: 100px;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* MENU DE NAVEGAÇÃO */
+        /* HEADER / NAVBAR ESTILO WIX/ATMOS */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
             background: var(--menu-bg);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
             display: flex;
-            justify-content: center;
-            padding: 15px 0;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--atmos-color);
         }
 
-        .navbar a {
+        .navbar img { max-height: 40px; margin-bottom: 10px; }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 14px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            transition: 0.3s;
+            letter-spacing: 1px;
         }
-
-        .navbar a:hover { color: var(--atmos-color); }
 
         .main-container { padding: 20px; display: flex; flex-direction: column; align-items: center; }
 
+        /* CARDS */
         .cards-container {
             display: flex;
             flex-wrap: wrap;
@@ -61,40 +67,39 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 30px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
             flex: 1;
-            min-width: 340px;
-            max-width: 550px;
+            min-width: 320px;
+            max-width: 450px;
             text-align: center;
         }
 
-        .atmos-card { border-top: 6px solid var(--atmos-color); }
-        .tech-card { border-top: 6px solid var(--tech-color); }
-
-        .logo-img { max-height: 90px; margin-bottom: 20px; }
+        .atmos-card { border-top: 5px solid var(--atmos-color); }
+        .tech-card { border-top: 5px solid var(--tech-color); }
 
         .badge {
             display: inline-block;
-            padding: 8px 18px;
+            padding: 5px 15px;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 11px;
-            margin-bottom: 20px;
+            font-size: 10px;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
         .atmos-badge { background: var(--atmos-color); color: #fff; }
         .tech-badge { background: var(--tech-color); color: #000; }
 
         .info-box {
-            background: rgba(0,0,0,0.3);
-            padding: 18px;
-            border-radius: 15px;
-            margin: 15px 0;
+            background: #0a0a0a;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
             text-align: left;
-            font-size: 14px;
+            font-size: 13px;
+            border-left: 3px solid #333;
         }
 
         .pillars-grid {
@@ -104,179 +109,174 @@
             margin-top: 15px;
         }
         .pillar {
-            background: rgba(255,255,255,0.03);
+            background: #000;
             padding: 10px;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border: 1px solid #222;
             text-align: left;
         }
-        .pillar h4 { margin: 5px 0; font-size: 12px; text-transform: uppercase; }
-        .atmos-p h4 { color: var(--atmos-color); }
-        .tech-p h4 { color: var(--tech-color); }
-        .pillar p { font-size: 10px; margin: 0; opacity: 0.7; }
+        .pillar h4 { margin: 0 0 5px 0; font-size: 11px; color: var(--atmos-color); }
+        .pillar p { font-size: 9px; margin: 0; opacity: 0.6; }
 
         .btn {
             display: block;
-            padding: 18px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             color: white;
-            margin-top: 25px;
+            margin-top: 20px;
             text-transform: uppercase;
             text-align: center;
+            font-size: 14px;
         }
-        .btn-atmos { background: linear-gradient(45deg, #ff4b2b, #ff0000); }
-        .btn-tech { background: linear-gradient(45deg, #00d2ff, #0072ff); }
-        .btn-vip { background: linear-gradient(45deg, #ffd700, #b8860b); color: #000; max-width: 300px; margin: 20px auto; }
+        .btn-atmos { background: var(--atmos-color); }
+        .btn-tech { background: var(--tech-color); color: #000; }
 
-        /* DÚVIDAS FREQUENTES */
-        .faq-section { max-width: 800px; width: 100%; margin: 60px 0; padding: 0 20px; box-sizing: border-box; }
-        .faq-item { background: rgba(255,255,255,0.05); margin-bottom: 10px; border-radius: 10px; overflow: hidden; }
-        .faq-question { padding: 20px; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .faq-answer { padding: 20px; font-size: 14px; color: #ccc; display: none; }
+        /* MENTORIA */
+        .mentoria-section {
+            background: #000;
+            width: 100%;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid #ffd700;
+            border-bottom: 1px solid #ffd700;
+            box-sizing: border-box;
+        }
 
-        .mentoria-section { background: #000; width: 100%; padding: 60px 20px; text-align: center; border-top: 2px solid #ffd700; border-bottom: 2px solid #ffd700; box-sizing: border-box; }
-        .advantages-section { background: #fff; color: #000; width: 100%; padding: 60px 20px; text-align: center; box-sizing: border-box; }
-        .advantages-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1100px; margin: 40px auto 0; }
-        .adv-item { flex: 1; min-width: 280px; max-width: 350px; }
-        .adv-item img { width: 100px; margin-bottom: 20px; }
+        /* VANTAGENS */
+        .advantages-section { background: #fff; color: #000; width: 100%; padding: 50px 20px; text-align: center; box-sizing: border-box; }
+        .advantages-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
+        .adv-item { flex: 1; min-width: 250px; max-width: 320px; }
+        .adv-item img { width: 80px; margin-bottom: 15px; }
 
-        .footer-content { width: 100%; max-width: 1200px; text-align: center; padding: 40px 20px; }
-        .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .cat-img { width: 100%; border-radius: 15px; }
+        /* FAQ - ÚLTIMA SEÇÃO */
+        .faq-section { width: 100%; max-width: 800px; margin: 60px auto; padding: 0 20px; }
+        .faq-item { background: #111; margin-bottom: 10px; border-radius: 8px; border: 1px solid #222; }
+        .faq-question { padding: 15px; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; font-size: 14px; }
+        .faq-answer { padding: 0 15px 15px 15px; font-size: 13px; color: #999; display: none; }
 
-        @media (max-width: 768px) { .cards-container { flex-direction: column; } .pillars-grid { grid-template-columns: 1fr; } .navbar { flex-direction: column; height: auto; padding: 10px; } .navbar a { margin: 5px 0; } }
+        /* RODAPE IMAGENS */
+        .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 30px; }
+        .cat-img { width: 100%; border-radius: 10px; }
+
+        @media (max-width: 768px) {
+            body { padding-top: 110px; }
+            .nav-links { gap: 8px; flex-wrap: wrap; }
+            .nav-links a { font-size: 9px; }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="#atmos">Atmos</a>
-        <a href="#techturbo">Tech Turbo</a>
-        <a href="#mentoria">Mentoria VIP</a>
-        <a href="#vantagens">Vantagens</a>
-        <a href="#faq">Dúvidas</a>
-    </nav>
+    <header class="navbar">
+        <img src="https://atmoscanais.com/wp-content/uploads/elementor/thumbs/cropped-PLAYVISION-LOGO-qmr8sfvkn1d7etuhq7cccpj85ps233pbbihkp996gk.png" alt="Logo">
+        <div class="nav-links">
+            <a href="#atmos">INÍCIO</a>
+            <a href="#atmos">PAINEL REVENDA</a>
+            <a href="#techturbo">PLANOS</a>
+            <a href="#faq">DÚVIDAS</a>
+        </div>
+    </header>
 
     <div class="main-container">
         <div class="cards-container">
             
             <div class="card atmos-card" id="atmos">
-                <img src="https://atmoscanais.com/wp-content/uploads/elementor/thumbs/cropped-PLAYVISION-LOGO-qmr8sfvkn1d7etuhq7cccpj85ps233pbbihkp996gk.png" class="logo-img">
-                <br>
-                <span class="badge atmos-badge">Servidor Premium estabilidade e qualidade</span>
-                
-                <div class="info-box" style="text-align: center; border-left: none; background: rgba(255, 75, 43, 0.1);">
-                    <h3 style="margin: 0; font-size: 16px; color: var(--atmos-color);">SEUS PROGRAMAS FAVORITOS</h3>
-                    <p style="font-size: 13px; margin: 5px 0;">Sem travamentos - A Melhor Lista 2026</p>
-                    <p style="font-size: 11px; opacity: 0.8;">Tudo o que você quer, em um só lugar! A Atmos é a sua chave para uma experiência sem limites.</p>
+                <span class="badge atmos-badge">Servidor Premium Estabilidade</span>
+                <div class="info-box" style="text-align: center; border-left: none;">
+                    <h3 style="margin: 0; color: var(--atmos-color);">SEUS PROGRAMAS FAVORITOS</h3>
+                    <p style="font-size: 12px;">A Melhor Lista 2026 - Sem Travamentos</p>
                 </div>
 
                 <div class="info-box">
                     <strong>⚠️ PLANO PÓS-PAGO (Adesão R$30)</strong>
-                    <table style="width:100%; font-size:13px; margin-top:10px;">
-                        <tr><td>11 a 100 ativos</td><td align="right">R$ 3,50</td></tr>
-                        <tr><td>Acima de 1001</td><td align="right">R$ 2,50</td></tr>
-                    </table>
+                    <p>Acertos todo dia 08. Preços a partir de R$ 2,50.</p>
                 </div>
 
                 <div class="pillars-grid">
-                    <div class="pillar atmos-p"><h4>PROTEÇÃO</h4><p>Proteção de dados e sinal ultra estável.</p></div>
-                    <div class="pillar atmos-p"><h4>PAGAMENTO</h4><p>Pix, Cartão e Boleto com baixa imediata.</p></div>
-                    <div class="pillar atmos-p"><h4>SUPORTE</h4><p>Suporte 24/7 direto com nossa equipe.</p></div>
-                    <div class="pillar atmos-p"><h4>SERVIDORES</h4><p>Alta performance para entretenimento sem limites.</p></div>
+                    <div class="pillar"><h4>PROTEÇÃO</h4><p>Sinal ultra estável.</p></div>
+                    <div class="pillar"><h4>PAGAMENTO</h4><p>Pix, Cartão e Boleto.</p></div>
+                    <div class="pillar"><h4>SUPORTE</h4><p>Atendimento 24/7.</p></div>
+                    <div class="pillar"><h4>SERVIDORES</h4><p>Alta performance.</p></div>
                 </div>
 
-                <a href="https://wa.me/5547999885669" class="btn btn-atmos">Suporte Atmos</a>
+                <a href="https://wa.me/5547999885669" class="btn btn-atmos">SUPORTE ATMOS</a>
             </div>
 
             <div class="card tech-card" id="techturbo">
-                <img src="https://static.wixstatic.com/media/2313af_8742d2f9d61c40348e17cdee2ff04f12~mv2.png" class="logo-img">
-                <br>
-                <span class="badge tech-badge">Tecnologia de ponta para seu entretenimento</span>
-                
+                <span class="badge tech-badge">Tecnologia de Ponta</span>
                 <div class="info-box">
                     <strong>🚀 Seja um Revendedor Tech Turbo</strong>
-                    <p style="font-size: 12px;">Com o painel exclusivo e suporte 24h, a revenda nunca foi tão lucrativa.</p>
+                    <p>Painel exclusivo e suporte 24h para seu lucro alto.</p>
                 </div>
 
                 <div class="info-box">
                     <strong>📱 COMPATIBILIDADE TOTAL</strong>
-                    <p>COMPATIBILIDADE COM OS MAIS DIVERSOS APLICATIVOS E DISPOSITIVOS!</p>
+                    <p>Compatível com todos os dispositivos do mercado!</p>
                 </div>
 
                 <div class="pillars-grid">
-                    <div class="pillar tech-p"><h4>PROTEÇÃO</h4><p>Tecnologia anti-travamento de última geração.</p></div>
-                    <div class="pillar tech-p"><h4>PAGAMENTO</h4><p>Diversas formas de pagamento facilitado.</p></div>
-                    <div class="pillar tech-p"><h4>SUPORTE</h4><p>Atendimento especializado 24h por dia.</p></div>
-                    <div class="pillar tech-p"><h4>SERVIDORES</h4><p>Infraestrutura líder para máxima estabilidade.</p></div>
+                    <div class="pillar" style="border-color: var(--tech-color);"><h4 style="color: var(--tech-color);">PROTEÇÃO</h4><p>Anti-travamento.</p></div>
+                    <div class="pillar" style="border-color: var(--tech-color);"><h4 style="color: var(--tech-color);">PAGAMENTO</h4><p>Fácil e rápido.</p></div>
+                    <div class="pillar" style="border-color: var(--tech-color);"><h4 style="color: var(--tech-color);">SUPORTE</h4><p>Especializado.</p></div>
+                    <div class="pillar" style="border-color: var(--tech-color);"><h4 style="color: var(--tech-color);">SERVIDORES</h4><p>Estabilidade máxima.</p></div>
                 </div>
 
-                <a href="https://wa.me/5547999885669" class="btn btn-tech">Suporte Tech Turbo</a>
-            </div>
-        </div>
-
-        <div class="faq-section" id="faq">
-            <h2 style="text-align: center; color: var(--atmos-color);">DÚVIDAS FREQUENTES</h2>
-            <div class="faq-item">
-                <div class="faq-question">Como funciona a revenda? <span>+</span></div>
-                <div class="faq-answer">Você adquire um painel de controle onde pode criar testes e gerenciar seus clientes de forma simples e rápida.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Quais aparelhos são compatíveis? <span>+</span></div>
-                <div class="faq-answer">Smart TVs (Samsung, LG, etc), TV Box, Celulares (Android/iOS), Chromecast, Fire Stick e Computadores.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Preciso de internet de quanto? <span>+</span></div>
-                <div class="faq-answer">Recomendamos uma conexão estável de pelo menos 10mb para conteúdos SD/HD e 20mb ou mais para conteúdos 4K.</div>
+                <a href="https://wa.me/5547999885669" class="btn btn-tech">SUPORTE TECH TURBO</a>
             </div>
         </div>
     </div>
 
-    <div class="mentoria-section" id="mentoria">
-        <h2 style="color: #ffd700; margin: 0;">TEMOS GRUPOS DE SUPORTE E MENTORIA VIP</h2>
-        <p style="font-size: 18px; font-weight: bold; margin: 10px 0;">REVENDA E LUCRE ALTO</p>
-        <a href="https://wa.me/5547999885669" class="btn btn-vip">QUERO MINHA MENTORIA</a>
+    <div class="mentoria-section">
+        <h2 style="color: #ffd700; margin: 0; font-size: 20px;">TEMOS GRUPOS DE SUPORTE E MENTORIA VIP</h2>
+        <p style="font-weight: bold; margin: 10px 0;">REVENDA E LUCRE ALTO</p>
+        <a href="https://wa.me/5547999885669" class="btn" style="background: #ffd700; color: #000; width: fit-content; margin: 20px auto; padding: 10px 30px;">QUERO MINHA MENTORIA</a>
     </div>
 
-    <div class="advantages-section" id="vantagens">
+    <div class="advantages-section">
+        <h2 style="margin: 0; font-size: 22px;">CONHEÇA NOSSAS VANTAGENS</h2>
         <div class="advantages-grid">
             <div class="adv-item">
                 <img src="https://static.wixstatic.com/media/2313af_fc8f5043ba8f43de8728c906b0843a03~mv2.png">
                 <h3>Alta Performance</h3>
-                <p>Nossa equipe garante o melhor serviço do mercado.</p>
             </div>
             <div class="adv-item">
                 <img src="https://static.wixstatic.com/media/2313af_7f1310133d604dafbc788c8a32cd9601~mv2.png">
                 <h3>Suporte Online</h3>
-                <p>Respondemos em menos de 1 hora.</p>
             </div>
             <div class="adv-item">
                 <img src="https://static.wixstatic.com/media/2313af_fcaf37456e434326a0f4292e31ada93b~mv2.png">
                 <h3>Maior Segurança</h3>
-                <p>Sua segurança é garantida pelo nosso sistema.</p>
             </div>
         </div>
     </div>
 
     <div class="main-container">
-        <div class="footer-content">
-            <h2 style="color: #ff4b2b;">NOSSA LISTA JÁ ULTRAPASSA 135.000k CONTEÚDOS PRÓPRIOS.</h2>
-            <p style="font-size: 20px; font-weight: bold; color: var(--tech-color); margin-bottom: 40px;">A MELHOR LISTA SEM TRAVAMENTOS!</p>
-            
-            <div class="cat-grid">
-                <img src="https://static.wixstatic.com/media/2313af_3bd052ccff254bbe8bf94e7566f288df~mv2.png" class="cat-img">
-                <img src="https://static.wixstatic.com/media/2313af_cd28e244e54448319b4869dae15fbe73~mv2.webp" class="cat-img">
-                <img src="https://static.wixstatic.com/media/2313af_1b386625f5bd4c5196631f1398815408~mv2.png" class="cat-img">
-            </div>
+        <h2 style="color: var(--atmos-color); text-align: center; font-size: 18px; margin-bottom: 0;">MAIS DE 135.000k EM CONTEÚDOS PRÓPRIOS</h2>
+        <p style="text-align: center; color: var(--tech-color); font-weight: bold;">A MELHOR LISTA SEM TRAVAMENTOS!</p>
+        <div class="cat-grid">
+            <img src="https://static.wixstatic.com/media/2313af_3bd052ccff254bbe8bf94e7566f288df~mv2.png" class="cat-img">
+            <img src="https://static.wixstatic.com/media/2313af_cd28e244e54448319b4869dae15fbe73~mv2.webp" class="cat-img">
+            <img src="https://static.wixstatic.com/media/2313af_1b386625f5bd4c5196631f1398815408~mv2.png" class="cat-img">
+        </div>
+    </div>
+
+    <div class="faq-section" id="faq">
+        <h2 style="text-align: center; color: var(--atmos-color); font-size: 20px;">DÚVIDAS FREQUENTES</h2>
+        <div class="faq-item">
+            <div class="faq-question">Como funciona a revenda? <span>+</span></div>
+            <div class="faq-answer">Você recebe um painel para gerenciar seus clientes e criar testes ilimitados.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Quais aparelhos são compatíveis? <span>+</span></div>
+            <div class="faq-answer">Smart TVs, TV Box, Celulares, PC e Fire Stick.</div>
         </div>
     </div>
 
     <script>
-        // Script simples para abrir/fechar o FAQ
         document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', event => {
+            item.addEventListener('click', () => {
                 const answer = item.nextElementSibling;
                 answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             });
